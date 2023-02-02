@@ -5,28 +5,31 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public Rigidbody2D rb;
-    public float horizontalForce = 1000f;
-    public float verticalForce = 1000f;
-    private float horizontalMove;
-    private float verticalMove;
-
-    // Update is called once per frame
-    void Update()
-    {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * horizontalForce;
-        verticalMove = Input.GetAxisRaw("Vertical") * verticalForce;
-
-    }
+    public float moveSpeed = 5f;
+    public Transform movePoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        movePoint.parent = null;
     }
 
-    void FixedUpdate() {
-        rb.AddForce(new Vector2(horizontalMove * Time.deltaTime, verticalMove * Time.deltaTime));
+    // Update is called once per frame
+    void Update()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f) {
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
+                movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+            }
+            else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
+                movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+            }
+        }
+
     }
+
+    
 
 }
