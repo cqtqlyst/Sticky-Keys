@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed = 5f;
     public Transform movePoint;
-
+    public Vector3 playerpos;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-
+        GameObject player = GameObject.Find("Player");
+        Transform playerTransform = player.transform;
+        playerpos = playerTransform.position;
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, movePoint.position) == 0f) {
@@ -33,19 +35,14 @@ public class PlayerMovement : MonoBehaviour
                 movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
             }
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Check to see if the tag on the collider is equal to Boundary
+        movePoint.position = playerpos;
+        Debug.Log("yoooo " + movePoint.position + " " + playerpos);
         
-        Debug.Log("yoooo");
-
-
     }
-
-
-    
 
 }
