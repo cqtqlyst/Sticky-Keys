@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
                     y = Input.GetAxisRaw("Vertical");
-                    if (movePoint.position.y + y >= 5 || movePoint.position.y + y <= -5) {
+                    if (movePoint.position.y + y >= 4 || movePoint.position.y + y <= -5) {
                         movePoint.position = playerTransform.position;
                     }
                     else {
