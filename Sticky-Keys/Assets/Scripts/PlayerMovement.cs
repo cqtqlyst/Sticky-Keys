@@ -52,11 +52,7 @@ public class PlayerMovement : MonoBehaviour
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
                     }
                 }
-                hitBorder = false;
             }
-
-        Debug.Log("status of hit border: " + hitBorder);
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
