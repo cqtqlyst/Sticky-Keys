@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
         
-            if (Vector3.Distance(transform.position, movePoint.position) <= 0f || hitBorder) {
+            if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f || hitBorder) {
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
                     x = Input.GetAxisRaw("Horizontal");
                     if (movePoint.position.x + x >= 9 || movePoint.position.x + x <= -9) {
