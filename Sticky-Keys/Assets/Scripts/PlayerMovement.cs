@@ -31,17 +31,30 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
-        if (movePoint.position.x > 8.5 || movePoint.position.x < -8.5 || movePoint.position.y < 4.5 || movePoint.position.y < -4.5) {
+        
             if (Vector3.Distance(transform.position, movePoint.position) <= 0f || hitBorder) {
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
-                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+                    if (movePoint.position.x == 8.5 || movePoint.position.x == -8.5 || movePoint.position.x > 8.5 || movePoint.position.x < -8.5)
+                    {
+                    movePoint.position = playerTransform.position;
+                    }
+                    else
+                    {
+                        movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+                    }
                 }
                 if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
-                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                    if (movePoint.position.y == 4.5 || movePoint.position.y == -4.5 || movePoint.position.y > 4.5 || movePoint.position.y < -4.5)
+                    {
+                    movePoint.position = playerTransform.position;
+                    }
+                    else
+                    {
+                        movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                    }
                 }
                 hitBorder = false;
             }
-        }
 
         Debug.Log("status of hit border: " + hitBorder);
 
