@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
+// player movement class for phase1
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -32,28 +33,28 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
-        
-            if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f || hitBorder) {
-                if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
-                    x = Input.GetAxisRaw("Horizontal");
-                    if (movePoint.position.x + x >= 9 || movePoint.position.x + x <= -9) {
-                        movePoint.position = playerTransform.position;
-                    }
-                    else {
-                        movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
-                    }
+        if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f || hitBorder) {
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
+                x = Input.GetAxisRaw("Horizontal");
+                if (movePoint.position.x + x >= 9 || movePoint.position.x + x <= -9) {
+                    movePoint.position = playerTransform.position;
                 }
-                if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
-                    y = Input.GetAxisRaw("Vertical");
-                    if (movePoint.position.y + y >= 4 || movePoint.position.y + y <= -5) {
-                        movePoint.position = playerTransform.position;
-                    }
-                    else {
-                        movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
-                    }
+                else {
+                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
                 }
-                hitBorder = false;
             }
+            if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
+                y = Input.GetAxisRaw("Vertical");
+                if (movePoint.position.y + y >= 4 || movePoint.position.y + y <= -5) {
+                    movePoint.position = playerTransform.position;
+                }
+                else {
+                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                }
+            }
+            hitBorder = false;
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -65,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
         hitBorder = true;
 
         movePoint.position = playerTransform.position;
-        Debug.Log("yoooo " + movePoint.position + " " + playerTransform.position);
         
     }
 

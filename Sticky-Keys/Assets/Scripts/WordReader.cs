@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// reads the word list in for the word.cs checking isLetter
 public class WordReader
 {
 

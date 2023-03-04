@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// a class for words
 public class Word
 {
     
