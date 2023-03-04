@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 
 public class Word
 {
@@ -25,6 +26,10 @@ public class Word
     public void addLetter(char c) {
         wordArrList.Add(new Letter(c));
         wordStr += c;
+    }
+
+    public bool checkIsIfWord() {
+        return true;
     }
 
 }
