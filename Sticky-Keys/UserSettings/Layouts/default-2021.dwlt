@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1027
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 124
+  controlID: 18
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 125
+  controlID: 19
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 126
+  controlID: 78
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -348,9 +348,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ba5f0000
-      m_LastClickedID: 24506
-      m_ExpandedIDs: 2cfbffff905f00009a5f0000
+      m_SelectedIDs: b4010000
+      m_LastClickedID: 0
+      m_ExpandedIDs: c6deffff46dfffff90dfffffd0dfffff12e0ffffdaf2ffff2cfbffff905f0000cc870000d6870000f6870000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -366,7 +366,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 9}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -654,9 +654,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.2190527, y: -0.016782857, z: 1.8139569}
+    m_Target: {x: 1.0707006, y: 0.45492354, z: 4.3606024}
     speed: 2
-    m_Value: {x: 1.2190527, y: -0.016782857, z: 1.8139569}
+    m_Value: {x: 1.0707006, y: 0.45492354, z: 4.3606024}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -707,9 +707,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.8936415
+    m_Target: 6.3824544
     speed: 2
-    m_Value: 5.8936415
+    m_Value: 6.3824544
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -867,22 +867,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/StickyKeys Assets/Tltle Screen
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/StickyKeys Assets/Tltle Screen
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/aayushgaywala/Documents/GitHub/Sticky-Keys/Sticky-Keys
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fa770000
-    m_LastClickedID: 30714
-    m_ExpandedIDs: 00000000ec620000ee620000f0620000f2620000f46200000a6a00005c6b00001475000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 41.697388}
+    m_SelectedIDs: 1a600000
+    m_LastClickedID: 24602
+    m_ExpandedIDs: 000000001a6000001c6000001e600000206000002260000024600000266000003860000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: Menu
@@ -893,7 +893,7 @@ MonoBehaviour:
         y: 0
         width: 0
         height: 0
-      m_UserData: 30610
+      m_UserData: 24634
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -910,7 +910,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec620000ee620000f0620000f2620000f4620000
+    m_ExpandedIDs: 000000001a6000001c6000001e6000002060000022600000246000002660000028600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -938,7 +938,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000
+    m_ExpandedInstanceIDs: c6230000d25f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
