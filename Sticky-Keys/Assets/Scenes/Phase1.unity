@@ -5885,7 +5885,7 @@ GameObject:
   m_Layer: 7
   m_Name: PlayerMovePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7454,8 +7454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa05f8a5a94f4d61a5d36ab04ec6f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7.5
   movePoint: {fileID: 636713082}
+  moveSpeed: 7.5
 --- !u!61 &1390381676
 BoxCollider2D:
   m_ObjectHideFlags: 0
