@@ -38,5 +38,9 @@ public class WordReader : MonoBehaviour
     {
         word = input;
         Debug.Log(word);
+        if (WordBank.ContainsKey(word))
+        {
+            Debug.Log(WordBank[word]);
+        }
     }
 }
