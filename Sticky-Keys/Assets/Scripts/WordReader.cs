@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 // reads the word list in for the word.cs checking isLetter
 public class WordReader : MonoBehaviour
 {
@@ -9,13 +10,18 @@ public class WordReader : MonoBehaviour
     private string word;
     private int letterNum;
     private int wordCount;
+    private int score = 0;
+
     Dictionary<string, int> WordBank;
     [SerializeField] private TextAsset file;
-    void Start() {
 
+    public TMP_Text Points;
+
+    void Start() {
         WordBank = new Dictionary<string, int>();
         ReadFile();
         Debug.Log(wordCount);
+        
     }
     void ReadFile()
     {
@@ -29,9 +35,9 @@ public class WordReader : MonoBehaviour
         }
     }
 
-    void Update()
+    void UpdateDisplay()
     {
-       
+        
     }
 
     public void ReadStringInput(string input)
@@ -40,7 +46,11 @@ public class WordReader : MonoBehaviour
         Debug.Log(word);
         if (WordBank.ContainsKey(word))
         {
-            Debug.Log(WordBank[word]);
+            score += WordBank[word];
+            Debug.Log(score);
+            UpdateDisplay();
+            Points.text = "Score: " + score;
         }
+        
     }
 }
