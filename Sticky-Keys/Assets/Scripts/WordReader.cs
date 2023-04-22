@@ -35,10 +35,6 @@ public class WordReader : MonoBehaviour
         }
     }
 
-    void UpdateDisplay()
-    {
-        
-    }
 
     public void ReadStringInput(string input)
     {
@@ -48,7 +44,6 @@ public class WordReader : MonoBehaviour
         {
             score += WordBank[word];
             Debug.Log(score);
-            UpdateDisplay();
             Points.text = "Score: " + score;
         }
         
