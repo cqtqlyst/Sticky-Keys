@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour
 {
     public TMP_Text Timer;
+    public string sceneName;
+
     float currentTime = 0f;
     float startingTime = 119f;
+
     void Start()
     {
         currentTime = startingTime;
@@ -42,8 +46,13 @@ public class CountdownTimer : MonoBehaviour
         }
         if (currentTime <= 0)
         {
-            currentTime = 0;
+            changeScene();
+
         }
         
+    }
+    public void changeScene()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

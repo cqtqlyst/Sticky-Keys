@@ -10,9 +10,7 @@ public class WordReader : MonoBehaviour
     private string word;
     private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private string letterPrint;
-    private int letterNum;
     private int wordCount;
-    private int score = 0;
     private bool isValid;
 
     Dictionary<string, int> WordBank;
@@ -35,6 +33,7 @@ public class WordReader : MonoBehaviour
             letterPrint += "   ";
         }
         validLetters.text = letterPrint;
+        ScoreManager.score = 0;
     }
 
     void ReadFile()
@@ -53,6 +52,7 @@ public class WordReader : MonoBehaviour
     public void ReadStringInput(string input)
     {
         word = input;
+        word = word.ToLower();
         Debug.Log(word);
         int length = word.Length;
         isValid = true;
@@ -74,9 +74,9 @@ public class WordReader : MonoBehaviour
         {
             if (WordBank.ContainsKey(word))
             {
-                score += WordBank[word];
-                Debug.Log(score);
-                Points.text = "Score: " + score;
+                ScoreManager.score += WordBank[word];
+                Debug.Log(ScoreManager.score);
+                Points.text = "Score: " + ScoreManager.score;
             }
         }
         for (int i = 0; i < 26; i++)
@@ -87,7 +87,7 @@ public class WordReader : MonoBehaviour
             }
             if (letters[i] != 0)
             {
-                letterPrint += " ";
+                letterPrint += "   ";
             }
         }
         validLetters.text = letterPrint;

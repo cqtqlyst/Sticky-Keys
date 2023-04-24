@@ -597,6 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: {fileID: 174737783}
+  sceneName: Ending Screen
 --- !u!4 &311601580
 Transform:
   m_ObjectHideFlags: 0
