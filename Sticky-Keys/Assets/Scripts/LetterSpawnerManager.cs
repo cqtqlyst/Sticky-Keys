@@ -30,5 +30,7 @@ public class LetterSpawnerManager : MonoBehaviour
                 GameObject.Destroy(target);
             }
         }
+
+        
     }
 }
