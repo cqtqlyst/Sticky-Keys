@@ -15,7 +15,9 @@ public class LetterSpawnerManager : MonoBehaviour
 
     void Update()
     {
-        if (CountdownTimer.currentTime <= 0f)
+        Debug.Log(CountdownTimer.currentTime.ToString());
+
+        if (CountdownTimer.currentTime <= 0.2f)
         {
             resetLetters();
         }    
