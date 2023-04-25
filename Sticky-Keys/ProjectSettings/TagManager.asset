@@ -8,6 +8,7 @@ TagManager:
   - Background
   - Button
   - MenuMusic
+  - Destroy
   layers:
   - Default
   - TransparentFX

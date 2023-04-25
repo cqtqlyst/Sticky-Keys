@@ -16,17 +16,14 @@ public class LetterSpawner : MonoBehaviour
     
     }
 
-    void setTag(string tag)
+    void setTagConnected()
     {
-
+        this.gameObject.tag = "Connected";
     }
 
-    //void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        int letter = Random.Range(1, 25);
-    //        GetComponent<SpriteRenderer>().sprite = letters[letter];
-    //    }
-    //}
+    void setTagDocked()
+    {
+        this.gameObject.tag = "Docked";
+    }
+
 }
