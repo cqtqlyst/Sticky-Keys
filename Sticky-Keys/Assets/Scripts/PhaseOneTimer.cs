@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.SceneManagement;
 
-public class CountdownTimer : MonoBehaviour
+public class PhaseOneTimer : MonoBehaviour
 {
     public TMP_Text Timer;
     public string sceneName;
@@ -25,17 +25,19 @@ public class CountdownTimer : MonoBehaviour
         currentTime -= 1 * Time.deltaTime;
         if (currentTime > 60f)
         {
-            if ((currentTime-60)> 9)
+            if ((currentTime - 60) > 9)
             {
-                Timer.text = "Time Left: 1:" + (currentTime-60).ToString("0");
-            } else
+                Timer.text = "Time Left: 1:" + (currentTime - 60).ToString("0");
+            }
+            else
             {
                 Timer.text = "Time Left: 1:0" + (currentTime - 60).ToString("0");
             }
-                
-        } else
+
+        }
+        else
         {
-            if (currentTime  > 9)
+            if (currentTime > 9)
             {
                 Timer.text = "Time Left: 0:" + currentTime.ToString("0");
             }
@@ -49,7 +51,7 @@ public class CountdownTimer : MonoBehaviour
             changeScene();
 
         }
-        
+
     }
     public void changeScene()
     {
