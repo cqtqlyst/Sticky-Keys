@@ -5,7 +5,7 @@ using UnityEngine;
 public class LetterSpawnerManager : MonoBehaviour
 {
     public GameObject letterSpawnerPrefab;
-    private ArrayList destroyList;
+
 
     void Update()
     {
@@ -20,16 +20,15 @@ public class LetterSpawnerManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Object.Instantiate(letterSpawnerPrefab, new Vector3((float)newXPos, (float)newYPos, 0f), Quaternion.identity);
-            destroyList.Add(GameObject.FindGameObjectWithTag("Destroy"));
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            for (int i = 0; i<destroyList.Count; i++)
+            GameObject[] destroy = GameObject.FindGameObjectsWithTag("Destroy");
+            foreach(GameObject target in destroy)
             {
-                Object.Destroy((Object)destroyList[i]);
+                GameObject.Destroy(target);
             }
-            destroyList.Clear();
         }
     }
 }
