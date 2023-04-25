@@ -6,7 +6,7 @@ using TMPro;
 // reads the word list in for the word.cs checking isLetter
 public class WordReader : MonoBehaviour
 {
-    private int[] letters = new int[26];
+    private static int[] letters = new int[26];
     private string word;
     private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private string letterPrint;
@@ -53,6 +53,7 @@ public class WordReader : MonoBehaviour
     {
         word = input;
         word = word.ToLower();
+        word = word.Replace(" ", "");
         Debug.Log(word);
         int length = word.Length;
         isValid = true;
