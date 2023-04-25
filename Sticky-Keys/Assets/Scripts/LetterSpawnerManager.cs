@@ -25,12 +25,10 @@ public class LetterSpawnerManager : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             GameObject[] destroy = GameObject.FindGameObjectsWithTag("Destroy");
-            foreach(GameObject target in destroy)
+            foreach (GameObject target in destroy)
             {
                 GameObject.Destroy(target);
             }
         }
-
-        
     }
 }
