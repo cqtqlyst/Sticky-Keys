@@ -5,30 +5,47 @@ using UnityEngine;
 public class LetterSpawnerManager : MonoBehaviour
 {
     public GameObject letterSpawnerPrefab;
+    public int numOfLettersToSpawn = 10;
+
+    void Start()
+    {
+        spawnLetters();
+    }
 
 
     void Update()
     {
-
-        int xAdd = Random.Range(0, 33);
-        int yAdd = Random.Range(0, 14);
-
-        // below equations derived from whiteboard work
-        double newXPos = ((double)xAdd * 0.5) + 0.25 - 8.5;
-        double newYPos = ((double)yAdd * 0.5) + 0.25 - 3.5;
-
-        if (Input.GetMouseButtonDown(0))
+        if (CountdownTimer.currentTime <= 0f)
         {
-            Object.Instantiate(letterSpawnerPrefab, new Vector3((float)newXPos, (float)newYPos, 0f), Quaternion.identity);
+            resetLetters();
+        }    
+    }
+
+    public void resetLetters()
+    {
+        GameObject[] destroy = GameObject.FindGameObjectsWithTag("Destroy");
+        foreach (GameObject target in destroy)
+        {
+            GameObject.Destroy(target);
         }
 
-        if (Input.GetMouseButtonDown(1))
+        Debug.Log("destroyed and spawning new letters");
+
+        spawnLetters();
+    }
+
+    void spawnLetters()
+    {
+        for (int i = 0; i < numOfLettersToSpawn; i++)
         {
-            GameObject[] destroy = GameObject.FindGameObjectsWithTag("Destroy");
-            foreach (GameObject target in destroy)
-            {
-                GameObject.Destroy(target);
-            }
+            int xAdd = Random.Range(0, 33);
+            int yAdd = Random.Range(0, 14);
+
+            // below equations derived from whiteboard work
+            double newXPos = ((double)xAdd * 0.5) + 0.25 - 8.5;
+            double newYPos = ((double)yAdd * 0.5) + 0.25 - 3.5;
+
+            Object.Instantiate(letterSpawnerPrefab, new Vector3((float)newXPos, (float)newYPos, 0f), Quaternion.identity);
         }
     }
 }

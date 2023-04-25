@@ -9,6 +9,8 @@ TagManager:
   - Button
   - MenuMusic
   - Destroy
+  - Connected
+  - Docked
   layers:
   - Default
   - TransparentFX

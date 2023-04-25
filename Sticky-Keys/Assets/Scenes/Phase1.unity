@@ -5819,6 +5819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterSpawnerPrefab: {fileID: 3897672474497416215, guid: f4f2bcd45a0484097962b2cab95d4f91, type: 3}
+  numOfLettersToSpawn: 10
 --- !u!4 &413931701
 Transform:
   m_ObjectHideFlags: 0
@@ -7796,6 +7797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1915429911}
   - component: {fileID: 1915429910}
+  - component: {fileID: 1915429912}
   m_Layer: 0
   m_Name: TimeLeft
   m_TagString: Untagged
@@ -7832,6 +7834,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915429912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915429909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea675809d33441fcb4911b2dbf1bb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: {fileID: 1962437348}
 --- !u!1 &1962437346
 GameObject:
   m_ObjectHideFlags: 0
