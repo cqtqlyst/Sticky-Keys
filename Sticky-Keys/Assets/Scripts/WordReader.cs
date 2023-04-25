@@ -53,6 +53,7 @@ public class WordReader : MonoBehaviour
     {
         word = input;
         word = word.ToLower();
+        word = word.Replace(" ", "");
         Debug.Log(word);
         int length = word.Length;
         isValid = true;
