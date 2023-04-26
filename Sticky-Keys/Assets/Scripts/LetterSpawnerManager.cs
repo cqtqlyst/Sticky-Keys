@@ -6,6 +6,7 @@ public class LetterSpawnerManager : MonoBehaviour
 {
     public GameObject letterSpawnerPrefab;
     public int numOfLettersToSpawn = 10;
+    public static bool ranOnce = false;
 
     void Start()
     {
@@ -15,11 +16,25 @@ public class LetterSpawnerManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(CountdownTimer.currentTime.ToString());
+        //Debug.Log(CountdownTimer.currentTime.ToString());
 
-        if (CountdownTimer.currentTime <= 0.2f)
+        if (Input.GetButtonDown("Fire3"))
+        {
+            GameObject[] docked = GameObject.FindGameObjectsWithTag("Connected");
+            foreach (GameObject target in docked)
+            {
+                //Debug.Log(target.GetComponent<LetterSpawner>().index - 1);
+                Debug.Log("start " + WordReader.letters[target.GetComponent<LetterSpawner>().index - 1]);
+                WordReader.letters[target.GetComponent<LetterSpawner>().index - 1] += 1;
+                Debug.Log("end " + WordReader.letters[target.GetComponent<LetterSpawner>().index - 1]);
+                GameObject.Destroy(target);
+            }
+        }
+
+        if (CountdownTimer.currentTime <= 0.2f && !ranOnce)
         {
             resetLetters();
+            ranOnce = true;
         }    
     }
 
@@ -31,7 +46,6 @@ public class LetterSpawnerManager : MonoBehaviour
             GameObject.Destroy(target);
         }
 
-        Debug.Log("destroyed and spawning new letters");
 
         spawnLetters();
     }

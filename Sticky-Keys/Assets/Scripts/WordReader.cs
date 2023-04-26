@@ -47,6 +47,11 @@ public class WordReader : MonoBehaviour
         }
         validLetters.text = letterPrint;
         ScoreManager.score = 0;
+
+        //for (int i = 0; i<26; i++)
+        //{
+        //    Debug.Log(i + " " + WordReader.letters[i]);
+        //}
     }
 
     void ReadFile()

@@ -8,6 +8,7 @@ public class CountdownTimer : MonoBehaviour
     public TMP_Text Timer;
     public static float currentTime = 0f;
     float startingTime = 9f;
+
     void Start()
     {
         currentTime = startingTime;
@@ -21,7 +22,13 @@ public class CountdownTimer : MonoBehaviour
 
         if (currentTime <= 0f)
         {
+            Timer.text = "Ready";
             currentTime = startingTime;
+        }
+
+        if (currentTime >= 8f)
+        {
+            LetterSpawnerManager.ranOnce = false;
         }
     }
 }

@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("MenuMusic");
 
         if (musicObj.Length > 1) {
-            Debug.Log("We are trying to destroy it");
+            //Debug.Log("We are trying to destroy it");
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
