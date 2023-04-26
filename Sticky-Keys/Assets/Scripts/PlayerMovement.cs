@@ -43,9 +43,9 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime); // makes the player move toward the move point
 
-        if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f || hitBorder) { // used to stop spam controls and movement
+        if (Vector3.Distance(transform.position, movePoint.position) <= 0.0f || hitBorder) { // used to stop spam controls and movement
                                                                                               // limits the amount of inputs per second
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) { // if there is input
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) { // if there is inpußt
 
                 x = Input.GetAxisRaw("Horizontal"); // get the input
 
