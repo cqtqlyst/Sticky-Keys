@@ -7,6 +7,7 @@ public class LetterSpawnerManager : MonoBehaviour
     public GameObject letterSpawnerPrefab;
     public int numOfLettersToSpawn = 10;
     public static bool ranOnce = false; // avoids an error with manipulation
+    public static bool dock;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class LetterSpawnerManager : MonoBehaviour
             WordReader.letters[i] = 0;
         }
         spawnLetters(); // spawns letters for the first time
+        dock = true;
     }
 
 
@@ -25,16 +27,21 @@ public class LetterSpawnerManager : MonoBehaviour
 
         if (Input.GetButtonDown("Fire3"))
         {
-            GameObject[] docked = GameObject.FindGameObjectsWithTag("Connected");
-            foreach (GameObject target in docked)
+            if (dock == true)
             {
-                //Debug.Log(target.GetComponent<LetterSpawner>().index - 1);
-                //Debug.Log("start " + WordReader.letters[target.GetComponent<LetterSpawner>().index - 1]);
+                GameObject[] docked = GameObject.FindGameObjectsWithTag("Connected");
+                foreach (GameObject target in docked)
+                {
+                    //Debug.Log(target.GetComponent<LetterSpawner>().index - 1);
+                    //Debug.Log("start " + WordReader.letters[target.GetComponent<LetterSpawner>().index - 1]);
 
-                WordReader.letters[target.GetComponent<LetterSpawner>().index - 1] += 1; // updates the global list
+                    WordReader.letters[target.GetComponent<LetterSpawner>().index - 1] += 1; // updates the global list
 
-                //Debug.Log("end " + WordReader.letters[target.GetComponent<LetterSpawner>().index - 1]);
-                GameObject.Destroy(target); // destroys the docked gameobjects
+                    //Debug.Log("end " + WordReader.letters[target.GetComponent<LetterSpawner>().index - 1]);
+                    GameObject.Destroy(target); // destroys the docked gameobjects
+                }
+                dock = false;
+                Debug.Log("You docked");
             }
         }
 

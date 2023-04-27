@@ -43,7 +43,10 @@ public class WordReader : MonoBehaviour
             {
                 letterPrint += alphabet[i];
             }
-            letterPrint += "   ";
+            if (letters[i] != 0)
+            {
+                letterPrint += "   ";
+            }
         }
         validLetters.text = letterPrint;
         ScoreManager.score = 0;
