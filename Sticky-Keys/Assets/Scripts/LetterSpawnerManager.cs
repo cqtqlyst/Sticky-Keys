@@ -46,6 +46,7 @@ public class LetterSpawnerManager : MonoBehaviour
                     //Debug.Log("end " + WordReader.letters[target.GetComponent<LetterSpawner>().index - 1]);
                     GameObject.Destroy(target); // destroys the docked gameobjects
                 }
+                PlayerMovement.moveSpeed = 5f;
                 dock = false;
                 for (int i = 0; i < 26; i++)
                 {

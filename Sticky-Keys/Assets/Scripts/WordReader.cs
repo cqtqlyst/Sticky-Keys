@@ -108,7 +108,7 @@ public class WordReader : MonoBehaviour
             if (WordBank.ContainsKey(word))
             {
                 //adds score since the word passes all checks
-                ScoreManager.score += WordBank[word];
+                ScoreManager.score += WordBank[word] * WordBank[word];
                 // outputs player score to make sure bugs don't exist
                 Debug.Log(ScoreManager.score);
                 // prints score on screen

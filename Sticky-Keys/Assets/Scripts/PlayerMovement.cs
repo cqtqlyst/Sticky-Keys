@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform movePoint;
 
     private bool hitBorder; // used to avoid a glitch faced earlier with the boundary
-    public float moveSpeed = 5f; // move speed
+    public static float moveSpeed = 5f; // move speed
     private GameObject player; // the actual player represented in code
     private Transform playerTransform; // the players position
 
@@ -74,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
             hitBorder = false; // constantly updated so the player can actually move again
         }
+
     }
 
 
