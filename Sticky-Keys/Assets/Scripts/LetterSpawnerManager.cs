@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LetterSpawnerManager : MonoBehaviour
 {
     public GameObject letterSpawnerPrefab;
     public int numOfLettersToSpawn = 10;
+    private string letterPrint;
+    private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static bool ranOnce = false; // avoids an error with manipulation
     public static bool dock;
+
+    public TMP_Text validLetters;
 
     void Start()
     {
@@ -29,6 +34,7 @@ public class LetterSpawnerManager : MonoBehaviour
         {
             if (dock == true)
             {
+                letterPrint = "";
                 GameObject[] docked = GameObject.FindGameObjectsWithTag("Connected");
                 foreach (GameObject target in docked)
                 {
@@ -41,6 +47,14 @@ public class LetterSpawnerManager : MonoBehaviour
                     GameObject.Destroy(target); // destroys the docked gameobjects
                 }
                 dock = false;
+                for (int i = 0; i < 26; i++)
+                {
+                    for (int j = 0; j < WordReader.letters[i]; j++)
+                    {
+                        letterPrint += alphabet[i];
+                    }
+                }
+                validLetters.text = letterPrint;
                 Debug.Log("Great Dock!!!");
             }
         }
