@@ -33,6 +33,7 @@ public class WordReader : MonoBehaviour
     // creates on screen text boxes
     public TMP_Text Points;
     public TMP_Text validLetters;
+    public TMP_Text wordMade;
 
     void Start() {
         // intializes the dictionary
@@ -55,7 +56,8 @@ public class WordReader : MonoBehaviour
         }
         validLetters.text = letterPrint;
         ScoreManager.score = 0;
-    }
+        wordsCreated = "";
+}
 
     void ReadFile()
     {
@@ -113,6 +115,7 @@ public class WordReader : MonoBehaviour
                 Debug.Log(ScoreManager.score);
                 // prints score on screen
                 Points.text = "Score: " + ScoreManager.score;
+                wordMade.text = "You Made: " + word +"!";
                 wordsCreated += word + ", ";
             }
         }

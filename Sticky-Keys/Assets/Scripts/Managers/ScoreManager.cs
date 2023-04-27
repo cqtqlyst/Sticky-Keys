@@ -18,6 +18,11 @@ public class ScoreManager : MonoBehaviour
             scoreDisplay.color = Color.red;
             scoreDisplay.text = "You Got a score of: " + score + "!" + "\r\n" + "You were able to make: " + WordReader.wordsCreated + "\r\n" + "You Lose!";
         }
+        if (score == 0)
+        {
+            scoreDisplay.color = Color.magenta;
+            scoreDisplay.text = "You Got a score of 0" + "\r\n" + "Try to make some words next time >:D";
+        }
         totalScore += score;
     }
 

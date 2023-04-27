@@ -33,7 +33,7 @@ public class LeaderboardReader : MonoBehaviour
             string v = line[1];
             int score = int.Parse(v);
             leaderboard.Add(name, score);
-            leaderboardPrint += name + "....." + v + "\r\n";
+            leaderboardPrint += name + " ..... " + v + "\r\n";
         }
     }
     void printLeaderboard()
