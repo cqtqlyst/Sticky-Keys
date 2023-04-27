@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStick : MonoBehaviour
 {
+    public float slowDownMultiplier = 0.75f;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,6 +23,9 @@ public class PlayerStick : MonoBehaviour
             letter.tag = "Connected";
         }
 
+        // slows down the player as it collects more objects
+        GameObject[] connected = GameObject.FindGameObjectsWithTag("Connected");
+        PlayerMovement.moveSpeed = (float)Math.Pow((double)slowDownMultiplier, (double)connected.Length) * PlayerMovement.moveSpeed;
 
     }
 }

@@ -7818,7 +7818,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePoint: {fileID: 636713082}
-  moveSpeed: 5
 --- !u!61 &1390381676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7946,6 +7945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c14bc695b03a4300b411d79e5078269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowDownMultiplier: 0.99
 --- !u!1 &1600556767
 GameObject:
   m_ObjectHideFlags: 0
