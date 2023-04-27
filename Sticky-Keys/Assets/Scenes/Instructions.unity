@@ -667,7 +667,7 @@ MonoBehaviour:
     them for the word hunt phase. You will use WASD to move around and shift to dock
     your letters.\n\nIn the word hunt phase, you type letters in to make words. Use
     the keyboard to type in words that you can make from the letters you collected
-    in the previous phase.\n"
+    in the previous phase. Your goal is to make 100 points to beat each level.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1023146bc23b749ff9778e7cf5d4defb, type: 2}
   m_sharedMaterial: {fileID: 4837957208769301346, guid: 1023146bc23b749ff9778e7cf5d4defb, type: 2}

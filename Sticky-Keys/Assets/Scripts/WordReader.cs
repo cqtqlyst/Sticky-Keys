@@ -98,10 +98,7 @@ public class WordReader : MonoBehaviour
             }
             else
             {
-                if (letters[i] != 0 && letters[i] != 4 && letters[i] != 14 && letters[i] != 20)
-                {
-                    letters[a]--;
-                }
+                letters[a]--;
             }
         }
         // checks if the word is still valid 
