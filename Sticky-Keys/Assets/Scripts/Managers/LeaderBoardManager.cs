@@ -24,4 +24,5 @@ public class LeaderBoardManager : MonoBehaviour
         writer.WriteLine(name + " " + score);
         writer.Close();
     }
+
 }
