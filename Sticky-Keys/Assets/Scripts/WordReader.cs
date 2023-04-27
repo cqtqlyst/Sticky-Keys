@@ -38,7 +38,7 @@ public class WordReader : MonoBehaviour
         Debug.Log(wordCount);
         for (int i = 0; i < 26; i++)
         {
-            letters[i] = 2;
+            //letters[i] = 2;
             for (int j = 0; j < letters[i]; j++)
             {
                 letterPrint += alphabet[i];

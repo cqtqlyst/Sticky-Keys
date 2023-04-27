@@ -10,6 +10,10 @@ public class LetterSpawnerManager : MonoBehaviour
 
     void Start()
     {
+        for (int i = 0; i < 26; i++)
+        {
+            WordReader.letters[i] = 0;
+        }
         spawnLetters();
     }
 
