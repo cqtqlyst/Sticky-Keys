@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 775b3505992984c9980e831442e3f18d
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/Leaderboard.unity
+    guid: fd4884e345f474001836c1c011219551
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerEndingScreen.unity
+    guid: e81941e7fcb294ad3b920a2c51f2484d
+>>>>>>> Stashed changes
   m_configObjects: {}
