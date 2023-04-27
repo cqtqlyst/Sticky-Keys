@@ -10,7 +10,7 @@ public class WordHuntPhaseTimer : MonoBehaviour
 {
     public TMP_Text Timer;
     float currentTime = 0f;
-    float startingTime = 20f;
+    float startingTime = 59f;
     public string sceneName;
     void Start()
     {

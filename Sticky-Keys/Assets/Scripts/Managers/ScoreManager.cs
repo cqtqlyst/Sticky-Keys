@@ -8,7 +8,10 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         scoreDisplay.text = "You Got a score of: " + score;
-
+        if (score > 0)
+        {
+            scoreDisplay.text = "You Got a score of: " + score + "!" + "\r\n" + "You were able to make: " + WordReader.wordsCreated;
+        } 
     }
 
 }

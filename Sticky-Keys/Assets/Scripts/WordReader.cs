@@ -114,7 +114,7 @@ public class WordReader : MonoBehaviour
                 Debug.Log(ScoreManager.score);
                 // prints score on screen
                 Points.text = "Score: " + ScoreManager.score;
-                wordsCreated += word + " ";
+                wordsCreated += word + ", ";
             }
         }
         // runs loop to print remaining letters on screen for the player
