@@ -1,6 +1,8 @@
 /*
- * 
- * 
+ * Author:  Rishabh Bhargava
+ * Date:    4/26/23
+ * Rev:     23
+ * Notes:   This script reads words finds if this exists and gives points based on that
  */
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,11 +55,6 @@ public class WordReader : MonoBehaviour
         }
         validLetters.text = letterPrint;
         ScoreManager.score = 0;
-
-        //for (int i = 0; i<26; i++)
-        //{
-        //    Debug.Log(i + " " + WordReader.letters[i]);
-        //}
     }
 
     void ReadFile()
@@ -69,7 +66,7 @@ public class WordReader : MonoBehaviour
         for(int i = 0; i < wordCount; i++)
         {
             int length = Lines[i].Length;
-            WordBank.Add(Lines[i], length);
+            WordBank.Add(Lines[i], length*length);
         }
     }
 
@@ -101,7 +98,10 @@ public class WordReader : MonoBehaviour
             }
             else
             {
-                letters[a]--;
+                if (letters[i] != 0 && letters[i] != 4 && letters[i] != 14 && letters[i] != 20)
+                {
+                    letters[a]--;
+                }
             }
         }
         // checks if the word is still valid 
@@ -111,7 +111,7 @@ public class WordReader : MonoBehaviour
             if (WordBank.ContainsKey(word))
             {
                 //adds score since the word passes all checks
-                ScoreManager.score += WordBank[word] * WordBank[word];
+                ScoreManager.score += WordBank[word];
                 // outputs player score to make sure bugs don't exist
                 Debug.Log(ScoreManager.score);
                 // prints score on screen
