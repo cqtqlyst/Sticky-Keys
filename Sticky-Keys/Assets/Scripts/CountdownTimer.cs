@@ -17,15 +17,19 @@ public class CountdownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Timer.color = Color.white;
+        if (currentTime <= 3f)
+        {
+            Timer.color = Color.red;
+        }
         currentTime -= 1 * Time.deltaTime;
         Timer.text = "Countdown Time: " + currentTime.ToString("0");
 
         if (currentTime <= 0f)
         {
-            Timer.text = "Ready";
             currentTime = startingTime;
         }
-
+       
         if (currentTime >= 8f)
         {
             LetterSpawnerManager.ranOnce = false;

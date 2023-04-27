@@ -14,6 +14,7 @@ public class DockTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Timer.color = Color.white;
         currentTime -= 1 * Time.deltaTime;
         Timer.text = currentTime.ToString("0");
 
@@ -25,6 +26,7 @@ public class DockTimer : MonoBehaviour
         }
         if (currentTime <= 0f)
         {
+            Timer.color = Color.green;
             Timer.text = "Dock Available";
             LetterSpawnerManager.dock = true;
             once = true;

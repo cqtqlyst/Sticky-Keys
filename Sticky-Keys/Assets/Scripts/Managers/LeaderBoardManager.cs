@@ -21,7 +21,7 @@ public class LeaderBoardManager : MonoBehaviour
     void writeFile(string name, int score)
     {
         var writer = new StreamWriter(path, true);
-        writer.WriteLine(name + " " + score);
+        writer.WriteLine(name + "," + score);
         writer.Close();
     }
 
