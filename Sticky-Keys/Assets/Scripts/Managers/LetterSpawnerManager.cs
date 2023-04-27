@@ -95,5 +95,6 @@ public class LetterSpawnerManager : MonoBehaviour
             // instantiates the actual object on the screen
             Object.Instantiate(letterSpawnerPrefab, new Vector3((float)newXPos, (float)newYPos, 0f), Quaternion.identity);
         }
+
     }
 }

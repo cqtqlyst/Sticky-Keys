@@ -6,7 +6,6 @@ public class LetterStick : MonoBehaviour
 {
 
     public GameObject player;
-    public bool isTouchingBoundary = false;
 
     void Awake()
     {
@@ -19,7 +18,7 @@ public class LetterStick : MonoBehaviour
 
         if (letter.tag == "Boundary")
         {
-            isTouchingBoundary = true;
+            Object.Destroy(this.gameObject);
         }
 
         if (letter.tag == "Destroy" && this.gameObject.tag == "Connected")
