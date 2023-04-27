@@ -9,9 +9,14 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         scoreDisplay.text = "You Got a score of: " + score;
-        if (score > 0)
+        if (score > 100)
         {
-            scoreDisplay.text = "You Got a score of: " + score + "!" + "\r\n" + "You were able to make: " + WordReader.wordsCreated;
+            scoreDisplay.color = Color.green;
+            scoreDisplay.text = "You Got a score of: " + score + "!" + "\r\n" + "You were able to make: " + WordReader.wordsCreated + "\r\n" + "You Win!";
+        } else
+        {
+            scoreDisplay.color = Color.red;
+            scoreDisplay.text = "You Got a score of: " + score + "!" + "\r\n" + "You were able to make: " + WordReader.wordsCreated + "\r\n" + "You Lose!";
         }
         totalScore += score;
     }
