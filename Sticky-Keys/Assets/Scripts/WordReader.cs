@@ -1,7 +1,9 @@
-using System.Collections;
+/*
+ * 
+ * 
+ */
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 // reads the word list in for the word.cs checking isLetter
 public class WordReader : MonoBehaviour
