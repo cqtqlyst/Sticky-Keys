@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class LeaderBoardManager : MonoBehaviour
 {
+    private string path;
+
+    void Awake()
+    {
+        path = Application.dataPath + "/Files/leaderboard.txt";
+    }
 
 
     public void ReadStringInput(string input)
@@ -14,8 +20,8 @@ public class LeaderBoardManager : MonoBehaviour
 
     void writeFile(string name, int score)
     {
-        string path = "/Assets/Files/leaderboard.txt";
-        StreamWriter writer = new StreamWriter(path, true);
-        writer.WriteLine("Test");
+        var writer = new StreamWriter(path, true);
+        writer.WriteLine(name + " " + score);
+        writer.Close();
     }
 }
