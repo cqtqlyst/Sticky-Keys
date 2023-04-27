@@ -6,6 +6,7 @@ public class LetterStick : MonoBehaviour
 {
 
     public GameObject player;
+    public bool isTouchingBoundary = false;
 
     void Awake()
     {
@@ -16,11 +17,10 @@ public class LetterStick : MonoBehaviour
     {
         GameObject letter = collision.gameObject;
 
-        // Debugging
-        //if (letter.tag == "Boundary")
-        //{
-        //    Debug.Log("hit boundary");
-        //}
+        if (letter.tag == "Boundary")
+        {
+            isTouchingBoundary = true;
+        }
 
         if (letter.tag == "Destroy" && this.gameObject.tag == "Connected")
         {
@@ -29,5 +29,6 @@ public class LetterStick : MonoBehaviour
 
             letter.tag = "Connected";
         }
+
     }
 }
