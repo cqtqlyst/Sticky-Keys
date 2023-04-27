@@ -20,6 +20,7 @@ public class WordReader : MonoBehaviour
     private int wordCount;
     private bool isValid;
 
+    public static string wordsCreated = "";
     // initializes a dictionary where all of the words are stored
     // initialize the file asset in our game
     Dictionary<string, int> WordBank;
@@ -113,6 +114,7 @@ public class WordReader : MonoBehaviour
                 Debug.Log(ScoreManager.score);
                 // prints score on screen
                 Points.text = "Score: " + ScoreManager.score;
+                wordsCreated += word + " ";
             }
         }
         // runs loop to print remaining letters on screen for the player
