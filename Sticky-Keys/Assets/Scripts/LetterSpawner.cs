@@ -4,27 +4,14 @@ using UnityEngine;
 
 public class LetterSpawner : MonoBehaviour
 {
-    public int index = 0;
-    public Sprite[] letters;
+    public int index = 0; // index to know what letter it is
+    public Sprite[] letters; // sprite list to iterate through
 
-    void Awake() {
-
+    void Awake()
+    {
         int letter = Random.Range(1, 25); // generates a random letter for spawning
-
-        // actually updates the individual sprite
-        index = letter;
-        GetComponent<SpriteRenderer>().sprite = letters[letter];
-    
-    }
-
-    void setTagConnected()
-    {
-        this.gameObject.tag = "Connected";
-    }
-
-    void setTagDocked()
-    {
-        this.gameObject.tag = "Docked";
+        index = letter; // updating this for the global letter list
+        GetComponent<SpriteRenderer>().sprite = letters[letter];// actually updates the individual sprite
     }
 
 }
