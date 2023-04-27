@@ -19,6 +19,11 @@ public class WordHuntPhaseTimer : MonoBehaviour
     {
         // counts time every second incrementally
         currentTime -= 1 * Time.deltaTime;
+        Timer.color = Color.white;
+        if (currentTime <= 5)
+        {
+            Timer.color = Color.red;
+        }
         // updates onscreen timer for the player to see
         Timer.text = "Time Left: " + currentTime.ToString("0");
         // changes phases after time is up
