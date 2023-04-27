@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using TMPro;
 
 public class LeaderboardReader : MonoBehaviour
 {
     Dictionary<string, int> leaderboard;
     [SerializeField] private TextAsset file;
-
+    public TMP_Text leaderboardText;
+    private string leaderboardPrint = "";
 
     void Start()
     {
@@ -15,6 +17,7 @@ public class LeaderboardReader : MonoBehaviour
         leaderboard = new Dictionary<string, int>();
         // reads file and adds words to dictionary
         ReadFile();
+        printLeaderboard();
     }
 
     void ReadFile()
@@ -30,7 +33,12 @@ public class LeaderboardReader : MonoBehaviour
             string v = line[1];
             int score = int.Parse(v);
             leaderboard.Add(name, score);
+            leaderboardPrint += name + "....." + v + "\r\n";
         }
+    }
+    void printLeaderboard()
+    {
+        leaderboardText.text = leaderboardPrint;
     }
 
 

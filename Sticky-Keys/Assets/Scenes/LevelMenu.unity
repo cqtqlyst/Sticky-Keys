@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1984008842}
+      - m_Target: {fileID: 1862812436}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: changeScene
         m_Mode: 1
@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97ade0c2f97847c99ef1de51ec9c1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Phase1
+  sceneName: Leaderboard
 --- !u!4 &1862812437
 Transform:
   m_ObjectHideFlags: 0
