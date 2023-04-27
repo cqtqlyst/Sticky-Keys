@@ -6,6 +6,7 @@ using UnityEngine;
 public class DockTimer : MonoBehaviour
 {
     public TMP_Text Timer;
+    public TMP_Text GreatDock;
     public static float currentTime = 0f;
     private bool once = true;
     float dockTimeLength = 9f;
@@ -24,6 +25,16 @@ public class DockTimer : MonoBehaviour
             currentTime = dockTimeLength;
             once = false;
         }
+
+        if (currentTime >= 5)
+        {
+            GreatDock.text = "Great Dock!!";
+        }
+        else
+        {
+            GreatDock.text = "";
+        }
+
         if (currentTime <= 0f)
         {
             Timer.color = Color.green;
