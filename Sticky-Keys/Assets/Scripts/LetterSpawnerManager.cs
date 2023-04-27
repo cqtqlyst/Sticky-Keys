@@ -41,7 +41,7 @@ public class LetterSpawnerManager : MonoBehaviour
                     GameObject.Destroy(target); // destroys the docked gameobjects
                 }
                 dock = false;
-                Debug.Log("You docked");
+                Debug.Log("Great Dock!!!");
             }
         }
 

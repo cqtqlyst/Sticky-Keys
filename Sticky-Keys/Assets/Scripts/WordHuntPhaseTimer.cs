@@ -21,28 +21,14 @@ public class WordHuntPhaseTimer : MonoBehaviour
     void Update()
     {
         currentTime -= 1 * Time.deltaTime;
-        if (currentTime > 60f)
+        
+        if (currentTime > 9)
         {
-            if ((currentTime - 60) > 9)
-            {
-                Timer.text = "Time Left: 1:" + (currentTime - 60).ToString("0");
-            }
-            else
-            {
-                Timer.text = "Time Left: 1:0" + (currentTime - 60).ToString("0");
-            }
-
+            Timer.text = "Time Left: 0:" + currentTime.ToString("0");
         }
         else
         {
-            if (currentTime > 9)
-            {
-                Timer.text = "Time Left: 0:" + currentTime.ToString("0");
-            }
-            else
-            {
-                Timer.text = "Time Left: 0:0" + currentTime.ToString("0");
-            }
+            Timer.text = "Time Left: 0:0" + currentTime.ToString("0");
         }
         if (currentTime <= 0)
         {
