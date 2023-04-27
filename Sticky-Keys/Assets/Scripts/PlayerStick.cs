@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerStick : MonoBehaviour
 {
-    public float slowDownMultiplier = 0.75f;
+    public float slowDownMultiplier = 0.6f;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
