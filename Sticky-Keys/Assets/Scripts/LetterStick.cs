@@ -25,7 +25,7 @@ public class LetterStick : MonoBehaviour
         {
             letter.transform.SetParent(player.transform);
             //letter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
+            
             letter.tag = "Connected";
         }
 
