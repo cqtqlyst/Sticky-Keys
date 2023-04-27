@@ -517,7 +517,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1984008842}
+      - m_Target: {fileID: 1781233128}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: changeScene
         m_Mode: 1
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97ade0c2f97847c99ef1de51ec9c1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Phase1
+  sceneName: P1Level2
 --- !u!4 &863396262
 Transform:
   m_ObjectHideFlags: 0
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1984008842}
+      - m_Target: {fileID: 863396261}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: changeScene
         m_Mode: 1
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97ade0c2f97847c99ef1de51ec9c1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Phase1
+  sceneName: P1Level3
 --- !u!4 &1781233129
 Transform:
   m_ObjectHideFlags: 0
