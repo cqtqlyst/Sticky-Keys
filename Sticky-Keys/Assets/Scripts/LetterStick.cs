@@ -16,10 +16,16 @@ public class LetterStick : MonoBehaviour
     {
         GameObject letter = collision.gameObject;
 
-        if (letter.tag == "Destroy")
+        // Debugging
+        //if (letter.tag == "Boundary")
+        //{
+        //    Debug.Log("hit boundary");
+        //}
+
+        if (letter.tag == "Destroy" && this.gameObject.tag == "Connected")
         {
             letter.transform.SetParent(player.transform);
-            letter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            //letter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             letter.tag = "Connected";
         }

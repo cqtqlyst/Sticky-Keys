@@ -18,7 +18,7 @@ public class PlayerStick : MonoBehaviour
             Vector3 difference = currentPos - letterPos;
 
             letter.transform.SetParent(this.gameObject.transform);
-            letter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            //letter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             letter.tag = "Connected";
         }
