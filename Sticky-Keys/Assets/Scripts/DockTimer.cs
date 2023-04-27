@@ -6,6 +6,7 @@ using UnityEngine;
 public class DockTimer : MonoBehaviour
 {
     public TMP_Text Timer;
+    public TMP_Text greatDock;
     public static float currentTime = 0f;
     private bool once = true;
     float dockTimeLength = 9f;
@@ -17,7 +18,6 @@ public class DockTimer : MonoBehaviour
         Timer.color = Color.white;
         currentTime -= 1 * Time.deltaTime;
         Timer.text = currentTime.ToString("0");
-
        
         if (LetterSpawnerManager.dock == false && once == true)
         {
