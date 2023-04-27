@@ -25,4 +25,9 @@ public class LeaderBoardManager : MonoBehaviour
         writer.Close();
     }
 
+    void updateLeaderboard()
+    {
+
+    }
+
 }
