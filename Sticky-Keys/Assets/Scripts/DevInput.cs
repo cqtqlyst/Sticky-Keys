@@ -10,7 +10,7 @@ public class DevInput : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Jump"))
         {
             SceneManager.LoadScene(nextScene);
         }
@@ -19,6 +19,5 @@ public class DevInput : MonoBehaviour
         {
             Application.Quit();
         }
-        
     }
 }
