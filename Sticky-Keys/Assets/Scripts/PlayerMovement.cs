@@ -82,9 +82,6 @@ public class PlayerMovement : MonoBehaviour
     // this method is used to stop the border glitch
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        Collider2D collider = collision.collider; // not used, should be removed soon
-
         // updates player movement and resets player transform position
         hitBorder = true;
         movePoint.position = playerTransform.position;
