@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public static float moveSpeed = 5f; // move speed
     private GameObject player; // the actual player represented in code
     private Transform playerTransform; // the players position
-
+    private int ctr = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -40,13 +40,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ctr++;
         float x, y; // used for checking the change with the move point
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime); // makes the player move toward the move point
 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.0f || hitBorder) { // used to stop spam controls and movement
                                                                                              // limits the amount of inputs per second
-            Debug.Log("hit border: " + hitBorder);
+            //Debug.Log("hit border: " + hitBorder);
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) { // if there is input
 
                 x = Input.GetAxisRaw("Horizontal"); // get the input
@@ -74,7 +75,10 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            //hitBorder = false; // constantly updated so the player can actually move again
+            if (ctr % 5000 == 0)
+            {
+                hitBorder = false; // constantly updated so the player can actually move again
+            }
         }
 
     }
