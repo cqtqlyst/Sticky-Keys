@@ -25,5 +25,4 @@ public class ScoreManager : MonoBehaviour
         }
         totalScore += score;
     }
-
 }

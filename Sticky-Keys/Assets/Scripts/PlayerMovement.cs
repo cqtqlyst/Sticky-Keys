@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.0f || hitBorder) { // used to stop spam controls and movement
                                                                                              // limits the amount of inputs per second
-            Debug.Log("hit border: " + hitBorder);
+            //Debug.Log("hit border: " + hitBorder);
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) { // if there is input
 
                 x = Input.GetAxisRaw("Horizontal"); // get the input
