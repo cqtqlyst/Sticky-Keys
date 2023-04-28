@@ -23,13 +23,16 @@ public class PlayerMovement : MonoBehaviour
     private Transform playerTransform; // the players position
     private int ctr = 0;
 
+    public string horizontalAxis;
+    public string verticalAxis;
+
     // Start is called before the first frame update
     void Start()
     {
         movePoint.parent = null; // unparenting the move point so it can move freely
 
         // basic player setup
-        player = GameObject.Find("Player"); 
+        player = this.gameObject; 
         playerTransform = player.transform;
 
         // setup for border protection
@@ -48,9 +51,9 @@ public class PlayerMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.0f || hitBorder) { // used to stop spam controls and movement
                                                                                              // limits the amount of inputs per second
             //Debug.Log("hit border: " + hitBorder);
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) { // if there is input
+            if (Mathf.Abs(Input.GetAxisRaw(horizontalAxis)) == 1f) { // if there is input
 
-                x = Input.GetAxisRaw("Horizontal"); // get the input
+                x = Input.GetAxisRaw(horizontalAxis); // get the input
 
                 if (movePoint.position.x + x >= 9 || movePoint.position.x + x <= -9) // ensures that no glitches with the boundary occur 
                 {
@@ -58,12 +61,12 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
-                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+                    movePoint.position += new Vector3(Input.GetAxisRaw(horizontalAxis), 0f, 0f);
                 }
             }
-            if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) { // if there is input
+            if (Mathf.Abs(Input.GetAxisRaw(verticalAxis)) == 1f) { // if there is input
 
-                y = Input.GetAxisRaw("Vertical"); // get the input
+                y = Input.GetAxisRaw(verticalAxis); // get the input
 
                 if (movePoint.position.y + y >= 4 || movePoint.position.y + y <= -5) // ensures that no glitches with the boundary occur
                 {
@@ -71,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
-                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f); // updates move point, effected on line 43
+                    movePoint.position += new Vector3(0f, Input.GetAxisRaw(verticalAxis), 0f); // updates move point, effected on line 43
                 }
             }
 

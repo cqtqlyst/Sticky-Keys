@@ -7864,6 +7864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePoint: {fileID: 636713082}
+  horizontalAxis: Horizontal
+  verticalAxis: Vertical
 --- !u!61 &1390381676
 BoxCollider2D:
   m_ObjectHideFlags: 0
