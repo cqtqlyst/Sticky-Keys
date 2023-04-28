@@ -7993,7 +7993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c14bc695b03a4300b411d79e5078269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowDownMultiplier: 0.99
+  slowDownMultiplier: 0.93
 --- !u!1 &1600556767
 GameObject:
   m_ObjectHideFlags: 0
